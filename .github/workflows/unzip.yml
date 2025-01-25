@@ -22,7 +22,9 @@ jobs:
         run: unzip simply-static-1-1737800006.zip -d extracted_contents
 
       - name: Commit and Push Unzipped Contents
-        run: 
+        run: |
+          git config user.name "juno2987"
+          git config user.email "vuduyan.1996@gmail.com"
           git add extracted_contents/
           git commit -m "Add unzipped contents"
           git push
