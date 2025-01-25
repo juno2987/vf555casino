@@ -23,8 +23,8 @@ jobs:
 
       - name: Commit and Push Unzipped Contents
         run: |
-          git config user.name "juno2987"
-          git config user.email "vuduyan.1996@gmail.com"
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
           git add extracted_contents/
           git commit -m "Add unzipped contents"
           git push
