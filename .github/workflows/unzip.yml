@@ -3,7 +3,7 @@ name: Unzip File
 on:
   push:
     branches:
-      - main  # Kích hoạt khi có thay đổi trên nhánh chính
+      - main
 
 jobs:
   unzip:
@@ -12,17 +12,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Verify File Exists
+        run: ls -l simply-static-1-1737800006.zip
+
       - name: Install unzip
         run: sudo apt-get install -y unzip
 
       - name: Unzip the file
-        run: |
-          unzip simply-static-1-1737800006.zip -d extracted_contents
+        run: unzip simply-static-1-1737800006.zip -d extracted_contents
 
       - name: Commit and Push Unzipped Contents
         run: |
-          git config user.name "Your Name"
-          git config user.email "your-email@example.com"
+          git config user.name "juno2987"
+          git config user.email "vuduyan.1996@gmail.com"
           git add extracted_contents/
           git commit -m "Add unzipped contents"
           git push
