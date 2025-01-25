@@ -1,0 +1,26 @@
+name: Unzip File
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Unzip File
+        run: |
+          sudo apt-get install unzip
+          unzip file.zip -d unzipped_content
+
+      - name: Commit Unzipped Content
+        run: |
+          git config user.name "juno2987"
+          git config user.email "vuduyan.1996@gmail.com"
+          git add unzipped_content/
+          git commit -m "Unzipped content"
+          git push
