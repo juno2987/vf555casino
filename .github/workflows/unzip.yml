@@ -15,7 +15,7 @@ jobs:
       - name: Unzip File
         run: |
           sudo apt-get install unzip
-          unzip file.zip -d unzipped_content
+          unzip simply-static-1-1737800006.zip -d unzipped_content
 
       - name: Commit Unzipped Content
         run: |
